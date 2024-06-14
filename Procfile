@@ -1,0 +1,1 @@
+web: forego start -f Procfile.dev
