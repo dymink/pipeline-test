@@ -1,7 +1,7 @@
 package main
 
 import (
-	"database/sql"
+	// "database/sql"
 	"fmt"
 	"log"
 	"net/http"
@@ -12,15 +12,15 @@ import (
 
 func main() {
 	// Connect to the database
-	dbURL := os.Getenv("DATABASE_URL")
-	db, err := sql.Open("postgres", dbURL)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer db.Close()
+	// dbURL := os.Getenv("DATABASE_URL")
+	// db, err := sql.Open("postgres", dbURL)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
+	// defer db.Close()
 
 	// Serve static files
-	fs := http.FileServer(http.Dir("./frontend/build"))
+	fs := http.FileServer(http.Dir("./frontend/dist"))
 	http.Handle("/", fs)
 
 	// Example endpoint
